@@ -1,4 +1,4 @@
-import {
+﻿import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -8,24 +8,29 @@ import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
-    question: "Você atende emergências elétricas?",
-    answer: "Sim! Oferecemos atendimento rápido e seguro para emergências e reparos imediatos. Entre em contato pelo nosso formulário ou telefone que responderemos o mais rápido possível.",
+    question: "Vocês atendem emergências elétricas?",
+    answer:
+      "Sim. Temos atendimento emergencial e também agendado para reparos, manutenção e diagnósticos elétricos.",
   },
   {
-    question: "Trabalha com iluminação LED e sensores inteligentes?",
-    answer: "Sim! Oferecemos soluções completas de iluminação com tecnologia moderna e economia de energia, incluindo fitas LED, sensores de presença, fotocélulas e automação de ambientes.",
+    question: "Qual é a experiência da equipe?",
+    answer:
+      "Nossa equipe conta com mais de 10 anos de experiência no setor elétrico, atuando em projetos residenciais, prediais e comerciais.",
   },
   {
-    question: "Oferece orçamento gratuito?",
-    answer: "Claro! Faça seu orçamento sem compromisso agora mesmo. Basta preencher o formulário de contato abaixo que entraremos em contato para entender sua necessidade e apresentar a melhor solução.",
+    question: "Os profissionais possuem certificações?",
+    answer:
+      "Sim. Todos os especialistas trabalham com certificações atualizadas, seguindo normas técnicas, segurança e conformidade em cada etapa.",
   },
   {
-    question: "Qual a área de atendimento?",
-    answer: "Atendemos residências, prédios e empresas na região. Entre em contato para verificar se atendemos sua localidade.",
+    question: "Quais tipos de projetos vocês executam?",
+    answer:
+      "Atuamos em residências, condomínios, hotéis, shoppings e empresas, incluindo iluminação externa/pública, automação e segurança eletrônica.",
   },
   {
-    question: "Vocês emitem nota fiscal?",
-    answer: "Sim, trabalhamos de forma totalmente regularizada e emitimos nota fiscal para todos os nossos serviços.",
+    question: "Como solicito atendimento?",
+    answer:
+      "Você pode falar pelo WhatsApp, ligar para (48) 99673-1221 ou enviar e-mail para guilhermeelectricatotal@gmail.com.",
   },
 ];
 
@@ -38,23 +43,17 @@ const FAQ = () => {
     <section id="faq" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Perguntas Frequentes
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Tire suas dúvidas sobre nossos serviços
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Perguntas Frequentes</h2>
+            <p className="text-lg text-muted-foreground">Dúvidas comuns sobre atendimento, prazos e serviços</p>
           </div>
 
-          {/* FAQ Accordion */}
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/30 data-[state=open]:shadow-md transition-all"
+                className="bg-card border border-border rounded-none px-6 data-[state=open]:border-primary/30 data-[state=open]:shadow-md transition-all"
               >
                 <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 [&[data-state=open]]:text-primary">
                   {faq.question}
@@ -66,13 +65,10 @@ const FAQ = () => {
             ))}
           </Accordion>
 
-          {/* CTA */}
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Não encontrou sua dúvida? Entre em contato!
-            </p>
+            <p className="text-muted-foreground mb-4">Não encontrou sua dúvida? Fale com nossa equipe.</p>
             <Button onClick={scrollToContact} size="lg">
-              Fale Conosco
+              Ir para Contato
             </Button>
           </div>
         </div>

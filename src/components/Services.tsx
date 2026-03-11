@@ -1,57 +1,53 @@
-import { Wrench, Lightbulb, Settings, Shield } from "lucide-react";
+﻿import { Wrench, Lightbulb, Settings, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const services = [
   {
     icon: Wrench,
     title: "Instalações Elétricas",
-    description: "Projetos e execução de instalações elétricas completas com qualidade e segurança.",
+    description: "Projetos e execução de instalações para residências, condomínios e empreendimentos comerciais.",
     items: [
       "Instalação de tomadas, interruptores e pontos de energia",
-      "Instalação de chuveiros elétricos, torneiras e aquecedores",
-      "Instalação de lustres, plafons e luminárias",
-      "Montagem de painéis elétricos e quadros de disjuntores",
-      "Instalação de motores e bombas elétricas",
-      "Pontos de energia externa à prova d'água",
-    ],
-  },
-  {
-    icon: Lightbulb,
-    title: "Iluminação",
-    description: "Soluções em iluminação residencial, comercial e decorativa com tecnologia moderna.",
-    items: [
-      "Iluminação com sensores de presença e fotocélulas",
-      "Instalação de fitas e perfis de LED",
-      "Iluminação para jardins, fachadas e áreas externas",
-      "Iluminação de outdoors e ambientes decorativos",
-      "Soluções em iluminação inteligente",
-      "Automação de ambientes",
+      "Montagem e adequação de quadros elétricos",
+      "Instalação de chuveiros, aquecedores e bombas",
+      "Infraestrutura elétrica para obras e reformas",
+      "Configurações gerais em sistemas elétricos",
     ],
   },
   {
     icon: Settings,
-    title: "Manutenção Elétrica",
-    description: "Diagnóstico, reparo e prevenção para manter sua instalação sempre em dia.",
+    title: "Manutenção e Reparos",
+    description: "Equipe especializada em manutenção elétrica preventiva e corretiva de qualquer natureza.",
     items: [
-      "Diagnóstico e reparo de curtos e falhas elétricas",
-      "Troca de disjuntores e fiações danificadas",
-      "Ajustes em interfonia e campainhas",
-      "Revisão de painéis industriais e residenciais",
-      "Prevenção de sobrecarga elétrica",
-      "Manutenção elétrica predial preventiva",
+      "Diagnóstico de falhas e curtos-circuitos",
+      "Troca de disjuntores e fiação danificada",
+      "Manutenção predial e condominial",
+      "Reparos emergenciais e programados",
+      "Ajustes e revisões técnicas completas",
+    ],
+  },
+  {
+    icon: Lightbulb,
+    title: "Iluminação e Automação",
+    description: "Soluções eficientes para iluminar melhor, economizar energia e trazer mais praticidade.",
+    items: [
+      "Iluminação residencial e comercial",
+      "Iluminação externa e de áreas públicas",
+      "Instalação de perfis, fitas e luminárias LED",
+      "Sensores de presença e fotocélulas",
+      "Automação para ambientes internos e externos",
     ],
   },
   {
     icon: Shield,
     title: "Segurança Eletrônica",
-    description: "Sistemas completos de segurança e automação para sua tranquilidade.",
+    description: "Implementação de sistemas para aumentar a proteção de residências, empresas e condomínios.",
     items: [
-      "Instalação de câmeras de segurança (CFTV)",
-      "Sistemas de alarme e sensores",
-      "Controles de acesso",
-      "Automação residencial para iluminação e segurança",
-      "Vídeo porteiros e interfones",
+      "Instalação de câmeras e CFTV",
+      "Alarmes e sensores de segurança",
+      "Controle de acesso e vídeo porteiro",
       "Fechaduras elétricas",
+      "Integração com automação e monitoramento",
     ],
   },
 ];
@@ -65,31 +61,28 @@ const Services = () => {
     <section id="servicos" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Serviços Elétricos Especializados
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Atendemos residências, prédios e empresas com agilidade, precisão e total segurança. 
-              Se envolve fiação, energia ou automação, podemos fazer!
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Serviços Oferecidos</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Oferecemos soluções completas em sistemas de eletricidade, incluindo instalação,
+              manutenção, reparos e configurações em geral. Atendemos às necessidades específicas de
+              cada cliente com eficiência, confiabilidade e foco total em segurança.
             </p>
           </div>
 
-          {/* Services Grid */}
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
+                className="group bg-card border border-border rounded-none p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
               >
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
                   <service.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-6">{service.description}</p>
-                
+
                 <ul className="space-y-2">
                   {service.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -102,10 +95,9 @@ const Services = () => {
             ))}
           </div>
 
-          {/* CTA */}
           <div className="text-center mt-12">
             <Button onClick={scrollToContact} size="lg">
-              Solicitar Orçamento para Seu Projeto
+              Solicitar Orçamento para Meu Projeto
             </Button>
           </div>
         </div>

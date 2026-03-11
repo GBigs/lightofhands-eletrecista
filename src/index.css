@@ -15,8 +15,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    /* Yellow - Electric brand color */
-    --primary: 45 100% 51%;
+    /* Brand color: #FFEB00 */
+    --primary: 55 100% 50%;
     --primary-foreground: 220 20% 10%;
 
     /* Black secondary */
@@ -26,7 +26,7 @@
     --muted: 220 14% 96%;
     --muted-foreground: 220 10% 40%;
 
-    --accent: 45 100% 95%;
+    --accent: 55 100% 95%;
     --accent-foreground: 220 20% 10%;
 
     --destructive: 0 84% 60%;
@@ -34,14 +34,13 @@
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 45 100% 51%;
+    --ring: 55 100% 50%;
 
     --radius: 0.625rem;
 
     /* Custom tokens */
-    --electric-yellow: 45 100% 51%;
-    --electric-yellow-dark: 45 100% 45%;
-    --electric-orange: 25 90% 50%;
+    --electric-yellow: 55 100% 50%;
+    --electric-yellow-dark: 55 100% 45%;
     --dark: 220 20% 10%;
     --gray-light: 220 14% 96%;
     --gray-medium: 220 10% 60%;
@@ -51,7 +50,6 @@
     --shadow-md: 0 4px 6px -1px hsl(220 20% 10% / 0.1), 0 2px 4px -2px hsl(220 20% 10% / 0.1);
     --shadow-lg: 0 10px 15px -3px hsl(220 20% 10% / 0.1), 0 4px 6px -4px hsl(220 20% 10% / 0.1);
     --shadow-xl: 0 20px 25px -5px hsl(220 20% 10% / 0.1), 0 8px 10px -6px hsl(220 20% 10% / 0.1);
-    --shadow-yellow: 0 10px 40px -10px hsl(45 100% 51% / 0.4);
   }
 }
 
@@ -68,17 +66,13 @@
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
   }
+
+  button {
+    border-radius: 0 !important;
+  }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(var(--electric-orange))];
-  }
-
-  .shadow-electric {
-    box-shadow: var(--shadow-yellow);
-  }
-
   .hover-lift {
     @apply transition-all duration-300 hover:-translate-y-1;
   }
