@@ -6,50 +6,49 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
+    --background: 222 83% 4%;
+    --foreground: 220 44% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card: 223 72% 8%;
+    --card-foreground: 220 44% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover: 223 72% 8%;
+    --popover-foreground: 220 44% 95%;
 
-    /* Brand color: #FFEB00 */
-    --primary: 55 100% 50%;
-    --primary-foreground: 220 20% 10%;
+    /* Brand color: #F5C600 */
+    --primary: 49 100% 48%;
+    --primary-foreground: 222 83% 4%;
 
-    /* Black secondary */
-    --secondary: 220 20% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 223 74% 6%;
+    --secondary-foreground: 220 38% 93%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 40%;
+    --muted: 223 58% 11%;
+    --muted-foreground: 220 24% 74%;
 
-    --accent: 55 100% 95%;
-    --accent-foreground: 220 20% 10%;
+    --accent: 223 62% 15%;
+    --accent-foreground: 220 38% 93%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 55 100% 50%;
+    --border: 223 44% 22%;
+    --input: 223 44% 22%;
+    --ring: 49 100% 48%;
 
-    --radius: 0.625rem;
+    --radius: 1rem;
 
     /* Custom tokens */
-    --electric-yellow: 55 100% 50%;
-    --electric-yellow-dark: 55 100% 45%;
-    --dark: 220 20% 10%;
-    --gray-light: 220 14% 96%;
-    --gray-medium: 220 10% 60%;
+    --electric-yellow: 49 100% 48%;
+    --electric-yellow-dark: 49 100% 40%;
+    --dark: 222 83% 4%;
+    --gray-light: 223 62% 15%;
+    --gray-medium: 220 24% 74%;
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(220 20% 10% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(220 20% 10% / 0.1), 0 2px 4px -2px hsl(220 20% 10% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(220 20% 10% / 0.1), 0 4px 6px -4px hsl(220 20% 10% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(220 20% 10% / 0.1), 0 8px 10px -6px hsl(220 20% 10% / 0.1);
+    --shadow-sm: 0 1px 2px 0 hsl(218 80% 3% / 0.45);
+    --shadow-md: 0 4px 6px -1px hsl(218 80% 3% / 0.55), 0 2px 4px -2px hsl(218 80% 3% / 0.45);
+    --shadow-lg: 0 10px 15px -3px hsl(218 80% 3% / 0.6), 0 4px 6px -4px hsl(218 80% 3% / 0.5);
+    --shadow-xl: 0 20px 25px -5px hsl(218 80% 3% / 0.65), 0 8px 10px -6px hsl(218 80% 3% / 0.55);
   }
 }
 
@@ -67,8 +66,13 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
+  ::selection {
+    background-color: hsl(var(--primary) / 0.28);
+    color: hsl(var(--foreground));
+  }
+
   button {
-    border-radius: 0 !important;
+    border-radius: var(--radius);
   }
 }
 

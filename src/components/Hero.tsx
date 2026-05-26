@@ -1,73 +1,73 @@
-﻿import { Button } from "@/components/ui/button";
-import { Zap, Shield, Clock } from "lucide-react";
+import { Clock, MessageCircle, Shield, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const whatsappUrl = "https://wa.me/message/MFAXWB5NL5QZI1";
+const whatsappUrl = "https://api.whatsapp.com/send/?phone=48998149149";
 
 const Hero = () => {
-  const scrollToContact = () => {
-    document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-32">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 mb-8">
-            <Zap className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-foreground">Instalações Elétricas • Manutenção • Segurança Eletrônica</span>
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-32">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -left-20 h-80 w-80 rounded-full bg-[#031134]/70 blur-3xl" />
+        <div className="absolute top-14 right-0 h-[28rem] w-[28rem] rounded-full bg-[#031134]/65 blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-[#0a2a66]/45 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 w-full px-0 md:container md:mx-auto md:px-4">
+        <div className="w-full px-4 text-center md:mx-auto md:max-w-4xl">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2">
+            <Zap className="h-4 w-4 text-primary" />
+            <span className="text-sm font-medium text-foreground">
+              Instalações Elétricas • Manutenção • Segurança Eletrônica
+            </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
-            <span className="text-foreground block">Guilherme Eletrecista</span>
-            <span className="text-primary block mt-2">Equipe com mais de 10 anos de experiência</span>
+          <h1 className="mb-6 text-[2rem] font-black leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+            <span className="block text-foreground">LH Soluções Elétricas</span>
+            <span className="mt-2 block text-primary">Atendimento técnico com agilidade e segurança</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Soluções completas em elétrica para Palhoça e região: instalação, manutenção, automação,
-            iluminação externa e segurança eletrônica para residências, condomínios, comércios e hotéis.
+          <p className="mx-auto mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl">
+            Soluções completas em elétrica para residências, condomínios e empresas: instalação,
+            manutenção, automação, iluminação externa e sistemas de segurança eletrônica.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button onClick={scrollToContact} variant="hero" size="lg" className="sm:text-base sm:px-8 sm:h-14">
-              <Zap className="w-5 h-5" />
-              <span className="hidden sm:inline">Solicitar Orçamento</span>
-              <span className="sm:hidden">Orçamento</span>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="sm:text-base sm:px-8 sm:h-14">
+          <div className="mb-16 flex justify-center">
+            <Button asChild variant="hero" size="lg" className="h-14 px-8 text-base sm:px-10">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
                 Falar no WhatsApp
               </a>
             </Button>
           </div>
 
           <div className="flex justify-center gap-6 md:gap-12">
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Shield className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            <div className="flex flex-col items-center gap-2 md:flex-row md:gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 md:h-12 md:w-12">
+                <Shield className="h-5 w-5 text-primary md:h-6 md:w-6" />
               </div>
               <div className="text-center md:text-left">
-                <p className="font-bold text-foreground text-sm md:text-base">Certificações</p>
-                <p className="text-xs text-muted-foreground hidden md:block">Atualizadas e em conformidade</p>
+                <p className="text-sm font-bold text-foreground md:text-base">Conformidade Técnica</p>
+                <p className="hidden text-xs text-muted-foreground md:block">Normas e segurança em cada etapa</p>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Clock className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            <div className="flex flex-col items-center gap-2 md:flex-row md:gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 md:h-12 md:w-12">
+                <Clock className="h-5 w-5 text-primary md:h-6 md:w-6" />
               </div>
               <div className="text-center md:text-left">
-                <p className="font-bold text-foreground text-sm md:text-base">Atendimento ágil</p>
-                <p className="text-xs text-muted-foreground hidden md:block">Emergencial e agendado</p>
+                <p className="text-sm font-bold text-foreground md:text-base">Atendimento Ágil</p>
+                <p className="hidden text-xs text-muted-foreground md:block">Emergencial e agendado</p>
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3">
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Zap className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+            <div className="flex flex-col items-center gap-2 md:flex-row md:gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 md:h-12 md:w-12">
+                <Zap className="h-5 w-5 text-primary md:h-6 md:w-6" />
               </div>
               <div className="text-center md:text-left">
-                <p className="font-bold text-foreground text-sm md:text-base">Experiência ampla</p>
-                <p className="text-xs text-muted-foreground hidden md:block">Projetos de vários portes</p>
+                <p className="text-sm font-bold text-foreground md:text-base">Equipe Especializada</p>
+                <p className="hidden text-xs text-muted-foreground md:block">Projetos de diferentes portes</p>
               </div>
             </div>
           </div>

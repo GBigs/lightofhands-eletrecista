@@ -76,7 +76,7 @@ const Testimonials = () => {
             <CarouselContent className="-ml-4">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="bg-background rounded-none p-8 shadow-lg relative h-full">
+                  <div className="bg-card border border-border rounded-2xl p-8 shadow-lg relative h-full">
                     <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/20" />
 
                     <span className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full mb-4">
@@ -104,12 +104,12 @@ const Testimonials = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-background border-border hover:bg-primary hover:text-primary-foreground" />
-            <CarouselNext className="hidden md:flex -right-12 bg-background border-border hover:bg-primary hover:text-primary-foreground" />
+            <CarouselPrevious className="hidden md:flex -left-12 bg-card border-border hover:bg-primary hover:text-primary-foreground" />
+            <CarouselNext className="hidden md:flex -right-12 bg-card border-border hover:bg-primary hover:text-primary-foreground" />
 
             <div className="flex justify-center gap-4 mt-8 md:hidden">
-              <CarouselPrevious className="static translate-y-0 bg-background border-border hover:bg-primary hover:text-primary-foreground" />
-              <CarouselNext className="static translate-y-0 bg-background border-border hover:bg-primary hover:text-primary-foreground" />
+              <CarouselPrevious className="static translate-y-0 bg-card border-border hover:bg-primary hover:text-primary-foreground" />
+              <CarouselNext className="static translate-y-0 bg-card border-border hover:bg-primary hover:text-primary-foreground" />
             </div>
           </Carousel>
 

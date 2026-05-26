@@ -1,4 +1,4 @@
-﻿import { Code2 } from "lucide-react";
+import BrandMark from "@/components/BrandMark";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,44 +10,44 @@ const Footer = () => {
   return (
     <footer className="bg-secondary py-16">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 grid gap-12 md:grid-cols-3">
             <div>
-              <img src="/logo-brand.svg" alt="Guilherme Eletrecista" className="h-[51px] w-auto mb-4" />
-              <p className="text-secondary-foreground/70 leading-relaxed">
-                Equipe de eletricistas com experiência ampla, certificações atualizadas e foco total em
-                qualidade, segurança e confiabilidade.
+              <div className="mb-4 flex items-center gap-3">
+                <BrandMark size="sm" />
+                <span className="font-bold text-secondary-foreground">LH Soluções Elétricas</span>
+              </div>
+              <p className="leading-relaxed text-secondary-foreground/70">
+                Equipe especializada em instalações, manutenção e soluções elétricas com foco total em
+                qualidade técnica, segurança e confiabilidade.
               </p>
             </div>
 
             <div>
-              <h4 className="font-bold text-secondary-foreground mb-4">Links Rápidos</h4>
+              <h4 className="mb-4 font-bold text-secondary-foreground">Links Rápidos</h4>
               <ul className="space-y-3">
                 <li>
-                  <a href="#servicos" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                  <a href="#servicos" className="text-secondary-foreground/70 transition-colors hover:text-primary">
                     Serviços
                   </a>
                 </li>
                 <li>
-                  <a href="#sobre" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                  <a href="#sobre" className="text-secondary-foreground/70 transition-colors hover:text-primary">
                     Sobre Nós
                   </a>
                 </li>
                 <li>
-                  <a href="#depoimentos" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                  <a href="#depoimentos" className="text-secondary-foreground/70 transition-colors hover:text-primary">
                     Depoimentos
                   </a>
                 </li>
                 <li>
-                  <a href="#faq" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                  <a href="#faq" className="text-secondary-foreground/70 transition-colors hover:text-primary">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <button
-                    onClick={scrollToContact}
-                    className="text-secondary-foreground/70 hover:text-primary transition-colors"
-                  >
+                  <button onClick={scrollToContact} className="text-secondary-foreground/70 transition-colors hover:text-primary">
                     Contato
                   </button>
                 </li>
@@ -55,30 +55,21 @@ const Footer = () => {
             </div>
 
             <div>
-              <h4 className="font-bold text-secondary-foreground mb-4">Contato</h4>
+              <h4 className="mb-4 font-bold text-secondary-foreground">Contato</h4>
               <ul className="space-y-3 text-secondary-foreground/70">
-                <li>(48) 99673-1221</li>
-                <li className="break-all">guilhermeelectricatotal@gmail.com</li>
+                <li>48 998 149 149</li>
+                <li className="break-all">contato@lhsolucoeseletricas.com.br</li>
                 <li>Palhoça e região</li>
                 <li>Atendimento emergencial e agendado</li>
               </ul>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-secondary-foreground/10">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-secondary-foreground/60 text-sm">
-                (c) {currentYear} Guilherme Eletrecista. Todos os direitos reservados.
+          <div className="border-t border-secondary-foreground/10 pt-8">
+            <div className="flex justify-center">
+              <p className="text-sm text-secondary-foreground/60">
+                (c) {currentYear} LH Soluções Elétricas. Todos os direitos reservados.
               </p>
-              <a
-                href="https://www.ultrafastsites.com.br/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-secondary-foreground/60 text-sm hover:text-primary transition-colors"
-              >
-                <Code2 className="w-4 h-4" />
-                <span>Desenvolvido por UltraFastSites</span>
-              </a>
             </div>
           </div>
         </div>
@@ -88,4 +79,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

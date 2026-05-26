@@ -1,180 +1,45 @@
-﻿import { useState } from "react";
+import { Instagram, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Zap, Phone, Mail, MapPin } from "lucide-react";
+
+const whatsappUrl = "https://api.whatsapp.com/send/?phone=48998149149";
+const instagramUrl = "https://www.instagram.com/lightofhands/";
 
 const ContactForm = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    toast({
-      title: "Solicitação enviada com sucesso!",
-      description: "Nossa equipe vai retornar o contato em breve.",
-    });
-
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsSubmitting(false);
-  };
-
   return (
-    <section id="contato" className="py-20 md:py-28 bg-muted">
+    <section id="contato" className="bg-muted py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Atendimento emergencial e agendado
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Entre em contato para instalações, manutenção, reparos e automação.
-                Atendemos com foco em qualidade, segurança e prazo, em projetos de qualquer escala.
-              </p>
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-3xl border border-primary/25 bg-card p-8 text-center shadow-xl md:p-12">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">Solicite seu Orçamento</p>
+            <h2 className="mb-4 text-3xl font-black text-foreground md:text-4xl">
+              Fale agora com a LH Soluções Elétricas
+            </h2>
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground">
+              Atendimento para instalações, manutenção, reparos e projetos elétricos. Resposta rápida pelo WhatsApp.
+            </p>
 
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">Telefone / WhatsApp</p>
-                    <p className="text-muted-foreground">(48) 99673-1221</p>
-                  </div>
-                </div>
+            <Button asChild size="xl" className="h-16 w-full max-w-2xl text-lg md:w-auto md:px-14">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Chamar no WhatsApp
+              </a>
+            </Button>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">E-mail</p>
-                    <p className="text-muted-foreground break-all">guilhermeelectricatotal@gmail.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">Área de atendimento</p>
-                    <p className="text-muted-foreground">Palhoça e região</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12 p-6 bg-background rounded-none border border-border">
-                <div className="flex items-center gap-3 mb-3">
-                  <Zap className="w-8 h-8 text-primary" />
-                  <span className="font-bold text-foreground text-lg">Compromisso com excelência</span>
-                </div>
-                <p className="text-muted-foreground">
-                  Trabalhamos com profissionais certificados, equipamentos modernos e total conformidade
-                  técnica para entregar segurança e confiança em cada serviço.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-background rounded-none p-8 md:p-10 shadow-xl border border-border">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Solicite seu Orçamento</h3>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                    Nome completo *
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Seu nome"
-                    className="h-12"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    E-mail *
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="seu@email.com"
-                    className="h-12"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Telefone / WhatsApp *
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="(48) 99673-1221"
-                    className="h-12"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Mensagem *
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Descreva o serviço que você precisa..."
-                    rows={4}
-                    className="resize-none"
-                  />
-                </div>
-
-                <Button type="submit" size="xl" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? (
-                    "Enviando..."
-                  ) : (
-                    <>
-                      <Zap className="w-5 h-5" />
-                      Enviar Solicitação
-                    </>
-                  )}
-                </Button>
-
-                <p className="text-sm text-muted-foreground text-center">
-                  Atendimento emergencial e agendado para residências, empresas e condomínios.
-                </p>
-              </form>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 text-muted-foreground md:flex-row">
+              <span className="inline-flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                48 998 149 149
+              </span>
+              <span className="hidden text-border md:inline">•</span>
+              <a
+                href={instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80"
+              >
+                <Instagram className="h-4 w-4" />
+                Instagram
+              </a>
             </div>
           </div>
         </div>

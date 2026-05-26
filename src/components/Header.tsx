@@ -1,8 +1,9 @@
-﻿import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
+import { Menu, MessageCircle, X } from "lucide-react";
+import BrandMark from "@/components/BrandMark";
+import { Button } from "@/components/ui/button";
 
-const whatsappUrl = "https://wa.me/message/MFAXWB5NL5QZI1";
+const whatsappUrl = "https://api.whatsapp.com/send/?phone=48998149149";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,85 +14,82 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/80 bg-background/95 backdrop-blur">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          <a href="#" className="flex items-center">
-            <img src="/logo.svg" alt="Guilherme Eletrecista" className="h-[45px] w-auto" />
+        <div className="flex h-20 items-center justify-between">
+          <a href="#" className="flex items-center gap-3">
+            <BrandMark size="sm" />
+            <span className="font-bold text-foreground">LH Soluções Elétricas</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-8 md:flex">
             <button
               onClick={() => scrollToSection("servicos")}
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               Serviços
             </button>
             <button
               onClick={() => scrollToSection("sobre")}
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("depoimentos")}
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               Depoimentos
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+              className="font-medium text-foreground/80 transition-colors hover:text-primary"
             >
               FAQ
             </button>
             <Button asChild size="lg">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="h-4 w-4" />
                 Falar no WhatsApp
               </a>
             </Button>
           </nav>
 
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Menu"
-          >
+          <button className="p-2 text-foreground md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Menu">
             {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
         {isMenuOpen && (
-          <nav className="md:hidden py-6 border-t border-border bg-background">
+          <nav className="border-t border-border bg-background py-6 md:hidden">
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("servicos")}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 text-left"
+                className="py-2 text-left font-medium text-foreground/80 transition-colors hover:text-primary"
               >
                 Serviços
               </button>
               <button
                 onClick={() => scrollToSection("sobre")}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 text-left"
+                className="py-2 text-left font-medium text-foreground/80 transition-colors hover:text-primary"
               >
                 Sobre
               </button>
               <button
                 onClick={() => scrollToSection("depoimentos")}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 text-left"
+                className="py-2 text-left font-medium text-foreground/80 transition-colors hover:text-primary"
               >
                 Depoimentos
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium py-2 text-left"
+                className="py-2 text-left font-medium text-foreground/80 transition-colors hover:text-primary"
               >
                 FAQ
               </button>
               <Button asChild className="mt-2">
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="h-4 w-4" />
                   Falar no WhatsApp
                 </a>
               </Button>

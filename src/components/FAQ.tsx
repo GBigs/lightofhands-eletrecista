@@ -1,4 +1,4 @@
-﻿import {
+import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -10,27 +10,27 @@ const faqs = [
   {
     question: "Vocês atendem emergências elétricas?",
     answer:
-      "Sim. Temos atendimento emergencial e também agendado para reparos, manutenção e diagnósticos elétricos.",
+      "Sim. A LH Soluções Elétricas oferece atendimento emergencial e também atendimento agendado para manutenção e reparos.",
   },
   {
-    question: "Qual é a experiência da equipe?",
+    question: "Quais tipos de serviço vocês realizam?",
     answer:
-      "Nossa equipe conta com mais de 10 anos de experiência no setor elétrico, atuando em projetos residenciais, prediais e comerciais.",
+      "Executamos instalações elétricas, manutenção preventiva e corretiva, iluminação, automação e segurança eletrônica.",
   },
   {
-    question: "Os profissionais possuem certificações?",
+    question: "A equipe segue normas técnicas?",
     answer:
-      "Sim. Todos os especialistas trabalham com certificações atualizadas, seguindo normas técnicas, segurança e conformidade em cada etapa.",
+      "Sim. Todos os serviços são executados com foco em segurança, conformidade técnica e boas práticas de instalação.",
   },
   {
-    question: "Quais tipos de projetos vocês executam?",
+    question: "Vocês atendem residência e empresa?",
     answer:
-      "Atuamos em residências, condomínios, hotéis, shoppings e empresas, incluindo iluminação externa/pública, automação e segurança eletrônica.",
+      "Atendemos residências, comércios, condomínios e empreendimentos de diferentes portes.",
   },
   {
     question: "Como solicito atendimento?",
     answer:
-      "Você pode falar pelo WhatsApp, ligar para (48) 99673-1221 ou enviar e-mail para guilhermeelectricatotal@gmail.com.",
+      "Você pode chamar no WhatsApp pelo número 48 998 149 149 ou acessar nossa página no Instagram para entrar em contato.",
   },
 ];
 
@@ -42,9 +42,9 @@ const FAQ = () => {
   return (
     <section id="faq" className="py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Perguntas Frequentes</h2>
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Perguntas Frequentes</h2>
             <p className="text-lg text-muted-foreground">Dúvidas comuns sobre atendimento, prazos e serviços</p>
           </div>
 
@@ -53,20 +53,20 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-none px-6 data-[state=open]:border-primary/30 data-[state=open]:shadow-md transition-all"
+                className="rounded-2xl border border-border bg-card px-6 transition-all data-[state=open]:border-primary/40 data-[state=open]:shadow-md"
               >
-                <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-5 [&[data-state=open]]:text-primary">
+                <AccordionTrigger className="py-5 text-left font-semibold text-foreground hover:text-primary hover:no-underline [&[data-state=open]]:text-primary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                <AccordionContent className="pb-5 leading-relaxed text-muted-foreground">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">Não encontrou sua dúvida? Fale com nossa equipe.</p>
+          <div className="mt-12 text-center">
+            <p className="mb-4 text-muted-foreground">Não encontrou sua dúvida? Fale com nossa equipe.</p>
             <Button onClick={scrollToContact} size="lg">
               Ir para Contato
             </Button>

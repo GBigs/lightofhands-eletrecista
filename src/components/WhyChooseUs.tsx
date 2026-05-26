@@ -1,4 +1,5 @@
-﻿import { CheckCircle2, Zap } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+import BrandMark from "@/components/BrandMark";
 import { Button } from "@/components/ui/button";
 
 const WhyChooseUs = () => {
@@ -7,34 +8,33 @@ const WhyChooseUs = () => {
   };
 
   const benefits = [
-    "Equipe de eletricistas com mais de 10 anos de experiência no setor",
+    "Equipe de eletricistas com experiência em projetos residenciais, comerciais e condominiais",
     "Profissionais com certificações atualizadas e foco em conformidade técnica",
-    "Capacidade para projetos de diferentes portes e complexidades",
-    "Atendimento para residências, condomínios, hotéis, shoppings e empresas",
-    "Soluções em iluminação externa/pública e segurança eletrônica",
+    "Capacidade para obras de diferentes portes com execução segura e organizada",
+    "Atendimento emergencial e agendado com prazos bem definidos",
+    "Soluções em iluminação, automação e segurança eletrônica",
   ];
 
   return (
-    <section id="sobre" className="py-20 md:py-28 bg-muted">
+    <section id="sobre" className="bg-muted py-20 md:py-28">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Sobre Nós</h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Aqui na Guilherme Eletrecista, somos uma equipe de profissionais altamente qualificados,
-                preparados para atender necessidades elétricas com segurança e eficiência em Palhoça.
-                Unimos conhecimento técnico, equipamentos modernos e compromisso com excelência,
-                inovação e confiança em cada projeto.
+              <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">Sobre a LH Soluções Elétricas</h2>
+              <p className="mb-8 text-lg leading-relaxed text-muted-foreground">
+                A LH Soluções Elétricas atua com planejamento, execução e manutenção em sistemas elétricos,
+                sempre com padrão técnico elevado e foco em segurança. Nossa equipe trabalha com organização,
+                transparência e compromisso com a qualidade em cada serviço.
               </p>
 
-              <ul className="space-y-4 mb-8">
+              <ul className="mb-8 space-y-4">
                 {benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary-foreground" />
+                    <div className="mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary">
+                      <CheckCircle2 className="h-4 w-4 text-primary-foreground" />
                     </div>
-                    <span className="text-foreground font-medium">{benefit}</span>
+                    <span className="font-medium text-foreground">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -45,14 +45,14 @@ const WhyChooseUs = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-square bg-primary/10 rounded-none flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-4 border-2 border-dashed border-primary/30 rounded-none" />
-                <div className="text-center p-8 relative z-10">
-                  <div className="text-6xl md:text-7xl font-black text-primary mb-2 flex justify-center">
-                    <Zap className="w-16 h-16 md:w-20 md:h-20" />
+              <div className="relative aspect-square overflow-hidden rounded-3xl border border-border bg-card">
+                <div className="absolute inset-4 rounded-2xl border-2 border-dashed border-primary/25" />
+                <div className="relative z-10 p-8 text-center">
+                  <div className="mb-4 flex justify-center">
+                    <BrandMark size="lg" />
                   </div>
-                  <p className="text-xl font-bold text-foreground">Excelência em cada etapa</p>
-                  <p className="text-muted-foreground mt-2">Qualidade, segurança e resultado de alto padrão</p>
+                  <p className="text-xl font-bold text-foreground">LH Soluções Elétricas</p>
+                  <p className="mt-2 text-muted-foreground">Qualidade, segurança e resultado técnico</p>
                 </div>
               </div>
             </div>
