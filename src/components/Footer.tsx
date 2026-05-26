@@ -59,7 +59,7 @@ const Footer = () => {
               <ul className="space-y-3 text-secondary-foreground/70">
                 <li>48 998 149 149</li>
                 <li className="break-all">contato@lhsolucoeseletricas.com.br</li>
-                <li>Palhoça e região</li>
+                <li>Criciúma e região</li>
                 <li>Atendimento emergencial e agendado</li>
               </ul>
             </div>
